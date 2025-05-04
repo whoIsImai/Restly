@@ -1,0 +1,11 @@
+{
+  "name": "mzansirentals",
+  "version": "1.0.0",
+  "description": "A website built with react, shadcn, tailwind that connects landlords with tenants",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Letlhogonolo",
+  "license": "ISC"
+}
