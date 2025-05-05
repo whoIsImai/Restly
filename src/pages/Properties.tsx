@@ -14,7 +14,7 @@ export default function PropertiesPage() {
     <div className="flex flex-col min-h-screen">
       <NavBar />
       <main className="flex-1">
-        <div className="container px-4 py-6 md:px-6 md:py-8">
+        <div className="container px-4 py-6 md:px-6 md:py-8 top-[-50px]">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div>
               <h1 className="text-3xl font-bold tracking-tight">Available Properties</h1>
@@ -71,10 +71,10 @@ export default function PropertiesPage() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="any">Any Price</SelectItem>
-                      <SelectItem value="0-500">$0 - $500</SelectItem>
-                      <SelectItem value="500-1000">$500 - $1,000</SelectItem>
-                      <SelectItem value="1000-1500">$1,000 - $1,500</SelectItem>
-                      <SelectItem value="1500+">$1,500+</SelectItem>
+                      <SelectItem value="0-500">R1,000 - R1,500</SelectItem>
+                      <SelectItem value="500-1000">R1,600 - R5,000</SelectItem>
+                      <SelectItem value="1000-1500">R6,000 - R9,000</SelectItem>
+                      <SelectItem value="1500+">R10,000+</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -90,22 +90,6 @@ export default function PropertiesPage() {
                       <SelectItem value="any">Any</SelectItem>
                       <SelectItem value="private">Private (No Sharing)</SelectItem>
                       <SelectItem value="shared">Shared</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="utilities" className="text-sm font-medium">
-                    Utilities Included
-                  </label>
-                  <Select>
-                    <SelectTrigger id="utilities">
-                      <SelectValue placeholder="Any" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="any">Any</SelectItem>
-                      <SelectItem value="all">All Utilities</SelectItem>
-                      <SelectItem value="some">Some Utilities</SelectItem>
-                      <SelectItem value="none">No Utilities</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
