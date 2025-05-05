@@ -23,7 +23,7 @@ export default function PropertiesPage() {
             <Link to="/properties/new">
               <Button className="gap-2">
                 <Plus className="h-4 w-4" />
-                List Your Property
+                Add Your Property
               </Button>
             </Link>
           </div>
@@ -115,16 +115,33 @@ export default function PropertiesPage() {
               </div>
 
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {
+
+                    /* 
+                     fetch("https://api.example.com/properties/1")
+                      .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                        })
+                    Simulating a fetch request to get property data
+                    I will fetch this data from an API
+                     and map through the results to create cards dynamically
+                     For now, i am just hardcoding the data for demonstration purposes
+
+                     KEY TIP Tlhogi : wrap it all in a useEffect hook and set the data to a state variable
+                    
+                    */
+                    }
                 {/* Property Card 1 */}
                 <Card>
                   <CardHeader className="pb-3">
                     <div className="flex justify-between items-start">
                       <CardTitle className="text-lg">Private Room in Shared House</CardTitle>
-                      <Badge>$650/mo</Badge>
+                      <Badge>R1500/mo</Badge>
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <MapPin className="mr-1 h-3 w-3" />
-                      Downtown Area
+                      Rustenburg noord
                     </div>
                   </CardHeader>
                   <CardContent className="pb-3">
@@ -246,7 +263,7 @@ export default function PropertiesPage() {
                   <CardHeader className="pb-3">
                     <div className="flex justify-between items-start">
                       <CardTitle className="text-lg">Entire House</CardTitle>
-                      <Badge>$1,500/mo</Badge>
+                      <Badge>R1,500/mo</Badge>
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <MapPin className="mr-1 h-3 w-3" />
