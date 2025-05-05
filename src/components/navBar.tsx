@@ -1,38 +1,70 @@
 import {Link} from 'react-router-dom'
-import { Home } from "lucide-react"
+import { Home, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useState } from 'react'
 
 export default function NavBar() {
+    const [menuOpen, setMenuOpen] = useState(false)
 
     return(
         <header className="border-b">
-        <div className="container flex items-center justify-between h-16 px-4 md:px-6 relative top-[-35px]">
-          <Link to="/" className="flex items-center gap-2 font-semibold">
-            <Home className="w-5 h-5" />
-            <span>Mzansi Rental</span>
+      <div className="container flex items-center justify-between h-16 px-4 md:px-6 relative top-[-35px]">
+        {/* Brand */}
+        <Link to="/" className="flex items-center gap-2 font-semibold">
+          <Home className="w-5 h-5" />
+          <span>Mzansi Rental</span>
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-6">
+          <Link to="/properties" className="text-sm font-medium hover:underline underline-offset-4">
+            Browse Properties
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/properties" className="text-sm font-medium hover:underline underline-offset-4">
-              Browse Properties
-            </Link>
-            <Link to="/about" className="text-sm font-medium hover:underline underline-offset-4">
-              About
-            </Link>
-            <Link to="/contact" className="text-sm font-medium hover:underline underline-offset-4">
-              Contact
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
+          <Link to="/about" className="text-sm font-medium hover:underline underline-offset-4">
+            About
+          </Link>
+          <Link to="/contact" className="text-sm font-medium hover:underline underline-offset-4">
+            Contact
+          </Link>
+        </nav>
+
+        {/* Buttons + Hamburger */}
+        <div className="flex items-center gap-4">
+          <div className="hidden md:flex gap-2">
             <Link to="/login">
-              <Button variant="outline" size="sm" className="hidden md:flex">
-                Log In
-              </Button>
+              <Button variant="outline" size="sm">Log In</Button>
             </Link>
             <Link to="/signup">
               <Button size="sm">Sign Up</Button>
             </Link>
           </div>
+
+          {/* Hamburger Icon (only mobile) */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden text-gray-700 focus:outline-none"
+          >
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
-      </header>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden px-4 pb-4 space-y-2 mb-5">
+          <Link to="/properties" className="block text-sm font-medium hover:underline p-1">Browse Properties</Link>
+          <Link to="/about" className="block text-sm font-medium hover:underline p-1">About</Link>
+          <Link to="/contact" className="block text-sm font-medium hover:underline p-1">Contact</Link>
+          <div className="pt-2 border-t mt-2 p-1">
+            <Link to="/login" className="block mb-2">
+              <Button variant="outline" size="sm" className="w-50">Log In</Button>
+            </Link>
+            <Link to="/signup" className="block mb-2">
+              <Button size="sm" className="w-50">Sign Up</Button>
+            </Link>
+          </div>
+        </div>
+      )}
+    </header>
     )
 }

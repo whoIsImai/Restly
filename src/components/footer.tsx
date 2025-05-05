@@ -5,7 +5,7 @@ export default function Footer() {
 
     return(
         <footer className="border-t">
-        <div className="container flex flex-col gap-4 py-10 md:flex-row md:gap-8 md:py-12">
+        <div className="container flex flex-col gap-3 py-10 md:flex-row md:gap-7 md:py-12">
           <div className="flex-1 space-y-4">
             <div className="flex items-center gap-2 font-semibold">
               <Home className="w-5 h-5" />
@@ -36,7 +36,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="space-y-3">
+            <div className="space-y-2">
               <h3 className="text-sm font-medium">Company</h3>
               <ul className="space-y-2 text-sm">
                 <li>
