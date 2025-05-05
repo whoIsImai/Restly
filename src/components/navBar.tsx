@@ -6,10 +6,10 @@ export default function NavBar() {
 
     return(
         <header className="border-b">
-        <div className="container flex items-center justify-between h-16 px-4 md:px-6">
+        <div className="container flex items-center justify-between h-16 px-4 md:px-6 relative top-[-35px]">
           <Link to="/" className="flex items-center gap-2 font-semibold">
             <Home className="w-5 h-5" />
-            <span>RentConnect</span>
+            <span>Mzansi Rental</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
             <Link to="/properties" className="text-sm font-medium hover:underline underline-offset-4">
