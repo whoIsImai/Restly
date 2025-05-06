@@ -1,4 +1,4 @@
-import {Link, useParams} from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
@@ -6,56 +6,41 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Calendar, Home, Mail, MapPin, Phone, Share } from "lucide-react"
 import NavBar from "@/components/navBar"
 import Footer from "@/components/footer"
-
-type Property = {
-  id: string
-    title: string
-    price: number
-    location: string
-    type: string
-    sharing: string
-    utilities: string[]
-    description: string
-    amenities: string[]
-    availableFrom: string
-    minStay: string
-    landlord: {
-      name: string
-      email: string
-      phone: string
-      preferredContact: string
-    }
-    datePosted: string
-}
+import { properties } from "@/lib/properties"
 
 export default function PropertyDetailPage() {
-  // In a real app, you would fetch the property details based on the ID
+  const { id } = useParams()
+  
+  if (!id) {
+    return <div>Property ID not found</div>
+  }
 
-    const {id} = useParams()
-    if (!id) {
-        return <div>Property ID not found</div>
-    }
+  const property = properties.find(p => p.id === id)
 
-  const property: Property = {
-    id,
-    title: "Sample Property",
-    price: 1000,
-    location: "Sample Location",
-    type: "Apartment",
-    sharing: "No",
-    utilities: ["Water", "Electricity"],
-    description: "Sample description",
-    amenities: ["Parking", "Security"],
-    availableFrom: "2024-01-01",
-    minStay: "6 months",
-    landlord: {
-      name: "John Doe",
-      email: "john@example.com",
-      phone: "1234567890",
-      preferredContact: "Email"
-    },
-    datePosted: "2024-01-01"
-  };
+  if (!property) {
+    return (
+      <div className="flex flex-col min-h-screen">
+        <NavBar />
+        <main className="flex-1">
+          <div className="container px-4 py-6 md:px-6 md:py-8">
+            <div className="flex items-center gap-2 mb-6">
+              <Link to="/properties">
+                <Button variant="ghost" size="sm" className="gap-1">
+                  <ArrowLeft className="h-4 w-4" />
+                  Back to Properties
+                </Button>
+              </Link>
+            </div>
+            <div className="text-center">
+              <h1 className="text-2xl font-bold">Property Not Found</h1>
+              <p className="text-muted-foreground mt-2">The property you're looking for doesn't exist.</p>
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    )
+  }
 
   return (
     <div className="flex flex-col min-h-screen">

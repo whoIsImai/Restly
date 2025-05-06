@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Filter, MapPin, Plus, Search } from "lucide-react"
 import NavBar from "@/components/navBar"
 import Footer from "@/components/footer"
+import { properties } from "@/lib/properties"
 
 export default function PropertiesPage() {
   return (
@@ -101,7 +102,7 @@ export default function PropertiesPage() {
 
             <div className="space-y-6">
               <div className="flex items-center justify-between">
-                <div className="text-sm text-muted-foreground">Showing 6 properties</div>
+                <div className="text-sm text-muted-foreground">Showing {properties.length} properties</div>
                 <Select defaultValue="newest">
                   <SelectTrigger className="w-[180px]">
                     <SelectValue placeholder="Sort by" />
@@ -115,274 +116,45 @@ export default function PropertiesPage() {
               </div>
 
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {
-
-                    /* 
-                     fetch("https://api.example.com/properties/1")
-                      .then((response) => response.json())
-                        .then((data) => {
-                            console.log(data);
-                        })
-                    Simulating a fetch request to get property data
-                    I will fetch this data from an API
-                     and map through the results to create cards dynamically
-                     For now, i am just hardcoding the data for demonstration purposes
-
-                     KEY TIP Tlhogi : wrap it all in a useEffect hook and set the data to a state variable
-                    
-                    */
-                    }
-                {/* Property Card 1 */}
-                <Card>
-                  <CardHeader className="pb-3">
-                    <div className="flex justify-between items-start">
-                      <CardTitle className="text-lg">Private Room in Shared House</CardTitle>
-                      <Badge>R1500/mo</Badge>
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <MapPin className="mr-1 h-3 w-3" />
-                      Rustenburg noord
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pb-3">
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span>Property Type:</span>
-                        <span className="font-medium">Room</span>
+                {properties.map((property) => (
+                  <Card key={property.id}>
+                    <CardHeader className="pb-3">
+                      <div className="flex justify-between items-start">
+                        <CardTitle className="text-lg">{property.title}</CardTitle>
+                        <Badge>R{property.price}/mo</Badge>
                       </div>
-                      <div className="flex justify-between">
-                        <span>Sharing:</span>
-                        <span className="font-medium">With 2 tenants</span>
+                      <div className="flex items-center text-sm text-muted-foreground">
+                        <MapPin className="mr-1 h-3 w-3" />
+                        {property.location}
                       </div>
-                      <div className="flex justify-between">
-                        <span>Utilities:</span>
-                        <span className="font-medium">Water included</span>
+                    </CardHeader>
+                    <CardContent className="pb-3">
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span>Property Type:</span>
+                          <span className="font-medium">{property.type}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Sharing:</span>
+                          <span className="font-medium">{property.sharing}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Utilities:</span>
+                          <span className="font-medium">{property.utilities.join(", ")}</span>
+                        </div>
+                        <Separator className="my-2" />
+                        <p className="line-clamp-3">{property.description}</p>
                       </div>
-                      <Separator className="my-2" />
-                      <p className="line-clamp-3">
-                        Cozy private room in a well-maintained house. Shared kitchen and bathroom with 2 other tenants.
-                        Close to public transportation and shopping centers.
-                      </p>
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                    <Link to="/properties/1" className="w-full">
-                      <Button variant="outline" className="w-full">
-                        View Details
-                      </Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
-
-                {/* Property Card 2 */}
-                <Card>
-                  <CardHeader className="pb-3">
-                    <div className="flex justify-between items-start">
-                      <CardTitle className="text-lg">Studio Apartment</CardTitle>
-                      <Badge>$850/mo</Badge>
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <MapPin className="mr-1 h-3 w-3" />
-                      Westside
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pb-3">
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span>Property Type:</span>
-                        <span className="font-medium">Apartment</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Sharing:</span>
-                        <span className="font-medium">No sharing</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Utilities:</span>
-                        <span className="font-medium">All included</span>
-                      </div>
-                      <Separator className="my-2" />
-                      <p className="line-clamp-3">
-                        Modern studio apartment with private bathroom and kitchenette. All utilities included in the
-                        rent. Perfect for students or young professionals.
-                      </p>
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                    <Link to="/properties/2" className="w-full">
-                      <Button variant="outline" className="w-full">
-                        View Details
-                      </Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
-
-                {/* Property Card 3 */}
-                <Card>
-                  <CardHeader className="pb-3">
-                    <div className="flex justify-between items-start">
-                      <CardTitle className="text-lg">Shared Room in Apartment</CardTitle>
-                      <Badge>$400/mo</Badge>
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <MapPin className="mr-1 h-3 w-3" />
-                      University District
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pb-3">
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span>Property Type:</span>
-                        <span className="font-medium">Room</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Sharing:</span>
-                        <span className="font-medium">With 1 tenant</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Utilities:</span>
-                        <span className="font-medium">Water & electricity</span>
-                      </div>
-                      <Separator className="my-2" />
-                      <p className="line-clamp-3">
-                        Affordable shared room in a 2-bedroom apartment near the university. Ideal for students looking
-                        to save on rent. All utilities included.
-                      </p>
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                    <Link to="/properties/3" className="w-full">
-                      <Button variant="outline" className="w-full">
-                        View Details
-                      </Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
-
-                {/* Property Card 4 */}
-                <Card>
-                  <CardHeader className="pb-3">
-                    <div className="flex justify-between items-start">
-                      <CardTitle className="text-lg">Entire House</CardTitle>
-                      <Badge>R1,500/mo</Badge>
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <MapPin className="mr-1 h-3 w-3" />
-                      Suburban Area
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pb-3">
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span>Property Type:</span>
-                        <span className="font-medium">House</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Sharing:</span>
-                        <span className="font-medium">No sharing</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Utilities:</span>
-                        <span className="font-medium">Not included</span>
-                      </div>
-                      <Separator className="my-2" />
-                      <p className="line-clamp-3">
-                        Spacious 3-bedroom house with a backyard and garage. Perfect for families or groups. Utilities
-                        not included in the rent.
-                      </p>
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                    <Link to="/properties/4" className="w-full">
-                      <Button variant="outline" className="w-full">
-                        View Details
-                      </Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
-
-                {/* Property Card 5 */}
-                <Card>
-                  <CardHeader className="pb-3">
-                    <div className="flex justify-between items-start">
-                      <CardTitle className="text-lg">Private Room in House</CardTitle>
-                      <Badge>$550/mo</Badge>
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <MapPin className="mr-1 h-3 w-3" />
-                      Eastside
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pb-3">
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span>Property Type:</span>
-                        <span className="font-medium">Room</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Sharing:</span>
-                        <span className="font-medium">With 3 tenants</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Utilities:</span>
-                        <span className="font-medium">All included</span>
-                      </div>
-                      <Separator className="my-2" />
-                      <p className="line-clamp-3">
-                        Furnished private room in a large house. Shared common areas with 3 friendly roommates. All
-                        utilities included in the rent.
-                      </p>
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                    <Link to="/properties/5" className="w-full">
-                      <Button variant="outline" className="w-full">
-                        View Details
-                      </Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
-
-                {/* Property Card 6 */}
-                <Card>
-                  <CardHeader className="pb-3">
-                    <div className="flex justify-between items-start">
-                      <CardTitle className="text-lg">1-Bedroom Apartment</CardTitle>
-                      <Badge>$950/mo</Badge>
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <MapPin className="mr-1 h-3 w-3" />
-                      City Center
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pb-3">
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span>Property Type:</span>
-                        <span className="font-medium">Apartment</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Sharing:</span>
-                        <span className="font-medium">No sharing</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Utilities:</span>
-                        <span className="font-medium">Water included</span>
-                      </div>
-                      <Separator className="my-2" />
-                      <p className="line-clamp-3">
-                        Modern 1-bedroom apartment in the heart of the city. Walking distance to restaurants, shops, and
-                        public transportation. Water included in rent.
-                      </p>
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                    <Link to="/properties/6" className="w-full">
-                      <Button variant="outline" className="w-full">
-                        View Details
-                      </Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
+                    </CardContent>
+                    <CardFooter>
+                      <Link to={`/properties/${property.id}`} className="w-full">
+                        <Button variant="outline" className="w-full">
+                          View Details
+                        </Button>
+                      </Link>
+                    </CardFooter>
+                  </Card>
+                ))}
               </div>
 
               <div className="flex justify-center">
