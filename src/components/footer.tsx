@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-3">
-            <div className="space-y-3">
+            <div className="space-y-2">
               <h3 className="text-sm font-medium">Platform</h3>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -27,11 +27,6 @@ export default function Footer() {
                 <li>
                   <Link to="/properties/new" className="text-muted-foreground hover:underline">
                     List a Property
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/pricing" className="text-muted-foreground hover:underline">
-                    Pricing
                   </Link>
                 </li>
               </ul>
@@ -58,9 +53,6 @@ export default function Footer() {
           <div className="flex gap-4 text-sm text-muted-foreground">
             <Link to="/terms" className="hover:underline">
               Terms of Service
-            </Link>
-            <Link to="/privacy" className="hover:underline">
-              Privacy
             </Link>
           </div>
         </div>

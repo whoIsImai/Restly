@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
@@ -7,29 +7,55 @@ import { ArrowLeft, Calendar, Home, Mail, MapPin, Phone, Share } from "lucide-re
 import NavBar from "@/components/navBar"
 import Footer from "@/components/footer"
 
-export default function PropertyDetailPage({ params }: { params: { id: string } }) {
+type Property = {
+  id: string
+    title: string
+    price: number
+    location: string
+    type: string
+    sharing: string
+    utilities: string[]
+    description: string
+    amenities: string[]
+    availableFrom: string
+    minStay: string
+    landlord: {
+      name: string
+      email: string
+      phone: string
+      preferredContact: string
+    }
+    datePosted: string
+}
+
+export default function PropertyDetailPage() {
   // In a real app, you would fetch the property details based on the ID
-  const property = {
-    id: params.id,
-    title: "Private Room in Shared House",
-    price: 650,
-    location: "Rustenburg",
-    type: "Room",
-    sharing: "With 2 tenants",
-    utilities: ["Water"],
-    description:
-      "Cozy private room in a well-maintained house. Shared kitchen and bathroom with 2 other tenants. Close to public transportation and shopping centers. The room comes furnished with a bed, desk, and closet. The house has a shared living room and a small backyard. Quiet neighborhood with easy access to downtown. Perfect for students or young professionals.",
-    amenities: ["Furnished", "Kitchen Access", "Laundry", "WiFi", "Street Parking"],
-    availableFrom: "June 1, 2025",
+
+    const {id} = useParams()
+    if (!id) {
+        return <div>Property ID not found</div>
+    }
+
+  const property: Property = {
+    id,
+    title: "Sample Property",
+    price: 1000,
+    location: "Sample Location",
+    type: "Apartment",
+    sharing: "No",
+    utilities: ["Water", "Electricity"],
+    description: "Sample description",
+    amenities: ["Parking", "Security"],
+    availableFrom: "2024-01-01",
     minStay: "6 months",
     landlord: {
-      name: "John Smith",
-      email: "john.smith@example.com",
-      phone: "(+27) 078-123-4567",
-      preferredContact: "Email",
+      name: "John Doe",
+      email: "john@example.com",
+      phone: "1234567890",
+      preferredContact: "Email"
     },
-    datePosted: "May 1, 2025",
-  }
+    datePosted: "2024-01-01"
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -71,7 +97,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                   </div>
                   <div className="space-y-2">
                     <div className="text-sm font-medium">Monthly Rent</div>
-                    <div>${property.price}</div>
+                    <div>R{property.price}.00</div>
                   </div>
                   <div className="space-y-2">
                     <div className="text-sm font-medium">Sharing</div>
