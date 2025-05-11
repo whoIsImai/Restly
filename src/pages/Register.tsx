@@ -1,17 +1,16 @@
-'use client'
-
 import {Link} from 'react-router-dom'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from '@/components/ui/form'
 import { Button } from '@/components/ui/button'
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { PasswordInput } from '@/components/ui/passwordinput'
 import { PhoneInput } from '@/components/ui/phoneinput'
+import NavBar from "@/components/navBar"
+import Footer from "@/components/footer"
 
 // Define validation schema using Zod
 const formSchema = z
@@ -54,6 +53,8 @@ export default function Register() {
   }
 
   return (
+    <>
+      <NavBar />
     <div className="flex min-h-[60vh] h-full w-full items-center justify-center px-4">
       <Card className="mx-auto max-w-sm">
         <CardHeader>
@@ -159,5 +160,7 @@ export default function Register() {
         </CardContent>
       </Card>
     </div>
+      <Footer />
+    </>
   )
 }
