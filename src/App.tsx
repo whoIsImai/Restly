@@ -5,6 +5,7 @@ import NewPropertyPage from "./pages/NewProperty"
 import PropertyDetailPage from "./pages/PropertyDetail"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import Contact from "./pages/Contact"
 import './App.css'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/about" element={<div>About</div>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/contact" element={<Contact />} />
         
       </Routes>
     </BrowserRouter>
