@@ -6,6 +6,7 @@ import PropertyDetailPage from "./pages/PropertyDetail"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Contact from "./pages/Contact"
+import ForgetPassword from "./pages/ForgotPassword"
 import './App.css'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/forgot-password" element={<ForgetPassword />} />
         
       </Routes>
     </BrowserRouter>
