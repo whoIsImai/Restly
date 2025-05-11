@@ -34,7 +34,7 @@ export default function NavBar() {
             <Link to="/login">
               <Button variant="outline" size="sm">Log In</Button>
             </Link>
-            <Link to="/signup">
+            <Link to="/register">
               <Button size="sm">Sign Up</Button>
             </Link>
           </div>
@@ -59,7 +59,7 @@ export default function NavBar() {
             <Link to="/login" className="block mb-2">
               <Button variant="outline" size="sm" className="w-50">Log In</Button>
             </Link>
-            <Link to="/signup" className="block mb-2">
+            <Link to="/register" className="block mb-2">
               <Button size="sm" className="w-50">Sign Up</Button>
             </Link>
           </div>

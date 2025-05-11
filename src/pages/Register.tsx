@@ -25,22 +25,16 @@ const formSchema = z
       .string()
       .min(6, { message: 'Password must be at least 6 characters long' })
       .regex(/[a-zA-Z0-9]/, { message: 'Password must be alphanumeric' }),
-    confirmPassword: z.string(),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    path: ['confirmPassword'],
-    message: 'Passwords do not match',
   })
 
-export default function RegisterPreview() {
+export default function Register() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
       email: '',
       phone: '',
-      password: '',
-      confirmPassword: '',
+      password: ''
     },
   })
 

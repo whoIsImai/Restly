@@ -4,6 +4,7 @@ import PropertiesPage from "./pages/Properties"
 import NewPropertyPage from "./pages/NewProperty"
 import PropertyDetailPage from "./pages/PropertyDetail"
 import Login from "./pages/Login"
+import Register from "./pages/Register"
 import './App.css'
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Route path="/properties/:id/delete" element={<div>Delete Property</div>} />
         <Route path="/about" element={<div>About</div>} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<div>signup</div>} />
+        <Route path="/register" element={<Register />} />
         
       </Routes>
     </BrowserRouter>
