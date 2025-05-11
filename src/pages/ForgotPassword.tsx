@@ -6,6 +6,8 @@ import {Form, FormControl, FormField, FormItem,FormLabel, FormMessage} from '@/c
 import { Button } from '@/components/ui/button'
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
+import NavBar from "@/components/navBar"
+import Footer from "@/components/footer"
 
 // Schema for email validation
 const formSchema = z.object({
@@ -32,6 +34,8 @@ export default function ForgetPassword() {
   }
 
   return (
+    <>
+      <NavBar />
     <div className="flex min-h-[40vh] h-full w-full items-center justify-center px-4">
       <Card className="mx-auto max-w-sm">
         <CardHeader>
@@ -73,5 +77,7 @@ export default function ForgetPassword() {
         </CardContent>
       </Card>
     </div>
+     <Footer />
+    </>
   )
 }
