@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button'
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { PasswordInput } from '@/components/ui/passwordinput'
-import { PhoneInput } from '@/components/ui/phoneinput'
 import NavBar from "@/components/navBar"
 import Footer from "@/components/footer"
 
@@ -111,14 +110,13 @@ export default function Register() {
                     <FormItem className="grid gap-2">
                       <FormLabel htmlFor="phone">Phone Number</FormLabel>
                       <FormControl>
-                        <PhoneInput {...field} />
-                        {/* <Input
+                        <Input
                           id="phone"
-                          placeholder="555-123-4567"
+                          placeholder="078-123-4567"
                           type="tel"
                           autoComplete="tel"
                           {...field}
-                        /> */}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
