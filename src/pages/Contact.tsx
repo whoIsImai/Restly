@@ -46,7 +46,7 @@ export default function Contact() {
     <>
       <NavBar />
     <div className="flex min-h-[60vh] h-full w-full items-center justify-center px-4">
-      <Card className="mx-auto max-w-md">
+      <Card className="mx-auto max-w-md m-5 p-5">
         <CardHeader>
           <CardTitle className="text-2xl">Contact Us</CardTitle>
           <CardDescription>

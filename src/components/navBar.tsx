@@ -12,7 +12,7 @@ export default function NavBar() {
         {/* Brand */}
         <Link to="/" className="flex items-center gap-2 font-semibold">
           <Home className="w-5 h-5" />
-          <span>Mzansi Rental</span>
+          <span>Rently</span>
         </Link>
 
         {/* Desktop Nav */}

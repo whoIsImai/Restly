@@ -55,7 +55,7 @@ export default function Register() {
     <>
       <NavBar />
     <div className="flex min-h-[60vh] h-full w-full items-center justify-center px-4">
-      <Card className="mx-auto max-w-sm">
+      <Card className="mx-auto max-w-sm m-3 p-5">
         <CardHeader>
           <CardTitle className="text-2xl">Register</CardTitle>
           <CardDescription>
@@ -112,7 +112,7 @@ export default function Register() {
                       <FormControl>
                         <Input
                           id="phone"
-                          placeholder="078-123-4567"
+                          placeholder="0781234567"
                           type="tel"
                           autoComplete="tel"
                           {...field}
