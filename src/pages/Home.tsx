@@ -79,7 +79,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-bold">List Your Property</h3>
                 <p className="text-muted-foreground">
-                  Provide detailed descriptions of your rental, including type, price, and amenities.
+                  After a payment provide detailed descriptions of your rental, including type, price, and amenities.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-4 text-center p-10 bg-gray-200">
