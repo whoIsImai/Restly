@@ -94,7 +94,13 @@ export default function PropertiesPage() {
                     </SelectContent>
                   </Select>
                 </div>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full" onClick={()=> {
+                  return(
+                    <>
+                      
+                    </>
+                  )
+                }}>
                   Apply Filters
                 </Button>
               </div>
