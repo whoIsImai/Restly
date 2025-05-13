@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Calendar, Home, Mail, MapPin, Phone, Share } from "lucide-react"
+import { ArrowLeft, Calendar, Mail, MapPin, Phone, Share } from "lucide-react"
 import NavBar from "@/components/navBar"
 import Footer from "@/components/footer"
 import { properties } from "@/lib/properties"
@@ -59,17 +59,10 @@ export default function PropertyDetailPage() {
           <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
             <div className="space-y-6">
               <div>
-                <h1 className="text-3xl font-bold tracking-tight">{property.title}</h1>
-                <div className="flex items-center mt-2 text-muted-foreground">
+                <h1 className="text-4xl font-bold tracking-tight">{property.title}</h1>
+                <div className="flex items-center mt-2 text-muted-foreground rounded-xl p-2 justify-center">
                   <MapPin className="mr-1 h-4 w-4" />
                   {property.location}
-                </div>
-              </div>
-
-              <div className="bg-muted rounded-xl p-8 flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <Home className="w-16 h-16 mx-auto text-muted-foreground" />
-                  <p className="text-muted-foreground">No images available for this property</p>
                 </div>
               </div>
 
