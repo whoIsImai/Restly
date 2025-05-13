@@ -12,7 +12,7 @@ export default function Footer() {
               <span>Rently</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Connecting landlords and tenants without the hassle of image uploads.
+              Connecting landlords and tenants.
             </p>
           </div>
           <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-3">
