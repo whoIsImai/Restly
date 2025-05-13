@@ -42,9 +42,9 @@ export const properties: Property[] = [
   },
   {
     id: "2",
-    title: "Studio Apartment",
-    price: 850,
-    location: "Westside",
+    title: "A Single Room",
+    price: 1500,
+    location: "Rustenburg noord Snel Street",
     type: "Apartment",
     sharing: "No sharing",
     utilities: ["All included"],
@@ -53,7 +53,7 @@ export const properties: Property[] = [
     availableFrom: "2024-05-01",
     minStay: "12 months",
     landlord: {
-      name: "Jane Smith",
+      name: "Jane Mailo",
       email: "jane@example.com",
       phone: "123-456-7891",
       preferredContact: "phone"
@@ -63,8 +63,8 @@ export const properties: Property[] = [
   {
     id: "3",
     title: "Shared Room in Apartment",
-    price: 400,
-    location: "University District",
+    price: 1500,
+    location: "Tlhabane near Tlhabane Square",
     type: "Room",
     sharing: "With 1 tenant",
     utilities: ["Water & electricity"],
@@ -73,8 +73,8 @@ export const properties: Property[] = [
     availableFrom: "2024-05-01",
     minStay: "6 months",
     landlord: {
-      name: "Mike Johnson",
-      email: "mike@example.com",
+      name: "John Leng",
+      email: "john@example.com",
       phone: "123-456-7892",
       preferredContact: "email"
     },
@@ -83,8 +83,8 @@ export const properties: Property[] = [
   {
     id: "4",
     title: "Entire House",
-    price: 1500,
-    location: "Suburban Area",
+    price: 10000,
+    location: "Rustenburg Square",
     type: "House",
     sharing: "No sharing",
     utilities: ["Not included"],
@@ -93,8 +93,8 @@ export const properties: Property[] = [
     availableFrom: "2024-05-01",
     minStay: "12 months",
     landlord: {
-      name: "Sarah Williams",
-      email: "sarah@example.com",
+      name: "Lerato Katsane",
+      email: "Lerato@example.com",
       phone: "123-456-7893",
       preferredContact: "phone"
     },
@@ -103,8 +103,8 @@ export const properties: Property[] = [
   {
     id: "5",
     title: "Private Room in House",
-    price: 550,
-    location: "Eastside",
+    price: 3500,
+    location: "Cashane",
     type: "Room",
     sharing: "With 3 tenants",
     utilities: ["All included"],
@@ -123,8 +123,8 @@ export const properties: Property[] = [
   {
     id: "6",
     title: "1-Bedroom Apartment",
-    price: 950,
-    location: "City Center",
+    price: 2000,
+    location: "Rustenburg noord snel",
     type: "Apartment",
     sharing: "No sharing",
     utilities: ["Water included"],
@@ -133,8 +133,8 @@ export const properties: Property[] = [
     availableFrom: "2024-05-01",
     minStay: "12 months",
     landlord: {
-      name: "Lisa Anderson",
-      email: "lisa@example.com",
+      name: "Tumelo Lesane",
+      email: "Tumi@example.com",
       phone: "123-456-7895",
       preferredContact: "phone"
     },
