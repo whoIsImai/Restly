@@ -46,7 +46,7 @@ export default function Contact() {
     <>
       <NavBar />
     <div className="flex min-h-[60vh] h-full w-full items-center justify-center px-4">
-      <Card className="mx-auto max-w-md m-5 p-5">
+      <Card className="mx-auto max-w-md m-5 p-2">
         <CardHeader>
           <CardTitle className="text-2xl">Contact Us</CardTitle>
           <CardDescription>
@@ -66,6 +66,7 @@ export default function Contact() {
                       <FormLabel htmlFor="name">Name</FormLabel>
                       <FormControl>
                         <Input
+                        className="w-70"
                           id="name"
                           placeholder="John Doe"
                           type="text"
@@ -87,6 +88,7 @@ export default function Contact() {
                       <FormLabel htmlFor="email">Email</FormLabel>
                       <FormControl>
                         <Input
+                        className="w-70"
                           id="email"
                           placeholder="johndoe@mail.com"
                           type="email"
@@ -108,6 +110,7 @@ export default function Contact() {
                       <FormLabel htmlFor="message">Message</FormLabel>
                       <FormControl>
                         <Textarea
+                        className="w-100"
                           id="message"
                           placeholder="Your message..."
                           autoComplete="off"
@@ -119,7 +122,7 @@ export default function Contact() {
                   )}
                 />
 
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-auto">
                   Send Message
                 </Button>
               </div>

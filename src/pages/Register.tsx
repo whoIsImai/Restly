@@ -90,6 +90,7 @@ export default function Register() {
                       <FormLabel htmlFor="email">Email</FormLabel>
                       <FormControl>
                         <Input
+                        className="w-70"
                           id="email"
                           placeholder="johndoe@mail.com"
                           type="email"
