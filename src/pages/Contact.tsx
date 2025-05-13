@@ -110,7 +110,7 @@ export default function Contact() {
                       <FormLabel htmlFor="message">Message</FormLabel>
                       <FormControl>
                         <Textarea
-                        className="w-100"
+                        className="w-100 h-30"
                           id="message"
                           placeholder="Your message..."
                           autoComplete="off"
