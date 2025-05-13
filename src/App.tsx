@@ -7,6 +7,7 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Contact from "./pages/Contact"
 import ForgetPassword from "./pages/ForgotPassword"
+import About from "./pages/About"
 import './App.css'
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         <Route path="/properties/:id" element={<PropertyDetailPage/>} />
         <Route path="/properties/:id/edit" element={<div>Edit Property</div>} />
         <Route path="/properties/:id/delete" element={<div>Delete Property</div>} />
-        <Route path="/about" element={<div>About</div>} />
+        <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<Contact />} />
