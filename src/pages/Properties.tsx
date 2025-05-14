@@ -157,7 +157,22 @@ export default function PropertiesPage() {
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <div className="text-sm text-muted-foreground">Showing {filteredProperties.length} properties</div>
-                <Select defaultValue="newest">
+                <Select defaultValue="newest"
+                onValueChange={(value) => {
+                   const sorted = [...filteredProperties];
+                    if (value === "price-low") {
+                      sorted.sort((a, b) => a.price - b.price);
+                    } else if (value === "price-high") {
+                      sorted.sort((a, b) => b.price - a.price);
+                    } else if (value === "newest") {
+                      sorted.sort(
+                        (a, b) => new Date(b.datePosted).getTime() - new Date(a.datePosted).getTime()
+                      );
+                    }
+
+                    setFilteredProperties(sorted);
+                }}
+                >
                   <SelectTrigger className="w-[180px]">
                     <SelectValue placeholder="Sort by" />
                   </SelectTrigger>
