@@ -55,7 +55,7 @@ export default function NewPropertyPage() {
 
                     <div className="grid gap-2">
                       <Label htmlFor="title">Property Title</Label>
-                      <Input id="title" placeholder="e.g., Cozy Room in Shared House" required />
+                      <Input id="title" placeholder="e.g. Cozy Room in Shared House" required />
                     </div>
 
                     <div className="grid gap-2">
@@ -81,7 +81,7 @@ export default function NewPropertyPage() {
 
                     <div className="grid gap-2">
                       <Label htmlFor="rent">Monthly Rent (R)</Label>
-                      <Input id="rent" type="number" min="0" placeholder="e.g., 750" required />
+                      <Input id="rent" type="number" min="0" placeholder="e.g. 2000" required />
                     </div>
                   </div>
 
