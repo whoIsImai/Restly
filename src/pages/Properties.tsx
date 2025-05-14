@@ -24,7 +24,7 @@ export default function PropertiesPage() {
     
   const filtered = properties.filter((item) => {
 
-    const matchesType = filters.type ? item.type === filters.type : true;
+    const matchesType = filters.type === "all" ? true : filters.type ? item.type === filters.type : true;
 
     const matchesLocation = filters.sharing ? item.location === filters.sharing : true;
 
@@ -93,9 +93,9 @@ export default function PropertiesPage() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="all">All Types</SelectItem>
-                      <SelectItem value="house">House</SelectItem>
-                      <SelectItem value="room">Room</SelectItem>
-                      <SelectItem value="apartment">Apartment</SelectItem>
+                      <SelectItem value="House">House</SelectItem>
+                      <SelectItem value="Room">Room</SelectItem>
+                      <SelectItem value="Apartment">Apartment</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

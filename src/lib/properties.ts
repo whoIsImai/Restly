@@ -43,7 +43,7 @@ export const properties: Property[] = [
   {
     id: "2",
     title: "A Single Room",
-    price: 1500,
+    price: 5000,
     location: "Rustenburg noord Snel Street",
     type: "Apartment",
     sharing: "No sharing",
@@ -63,7 +63,7 @@ export const properties: Property[] = [
   {
     id: "3",
     title: "Shared Room in Apartment",
-    price: 1500,
+    price: 3000,
     location: "Tlhabane near Tlhabane Square",
     type: "Room",
     sharing: "With 1 tenant",
@@ -123,7 +123,7 @@ export const properties: Property[] = [
   {
     id: "6",
     title: "1-Bedroom Apartment",
-    price: 2000,
+    price: 6000,
     location: "Rustenburg noord snel",
     type: "Apartment",
     sharing: "No sharing",
