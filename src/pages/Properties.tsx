@@ -9,10 +9,39 @@ import { Filter, MapPin, Plus, Search } from "lucide-react"
 import NavBar from "@/components/navBar"
 import Footer from "@/components/footer"
 import { properties } from "@/lib/properties"
-
+import { useState } from "react"
 
 
 export default function PropertiesPage() {
+  const [filteredProperties, setFilteredProperties] = useState(properties)
+  const [filters, setFilters] = useState({
+    type: '',
+    priceRange: '',
+    sharing: ''
+})
+
+  const handleApplyFilters = () => {
+    
+  const filtered = properties.filter((item) => {
+
+    const matchesType = filters.type ? item.type === filters.type : true;
+
+    const matchesLocation = filters.sharing ? item.location === filters.sharing : true;
+
+    const matchesPrice = filters.priceRange
+      ? (() => {
+          if (filters.priceRange === "1500+") return item.price >= 1500;
+          const [min, max] = filters.priceRange.split("-").map(Number);
+          return item.price >= min && item.price <= max;
+        })()
+      : true;
+
+    return matchesLocation && matchesType && matchesPrice;
+  });
+
+  setFilteredProperties(filtered);
+};
+
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -53,7 +82,12 @@ export default function PropertiesPage() {
                   <label htmlFor="property-type" className="text-sm font-medium">
                     Property Type
                   </label>
-                  <Select>
+                  <Select
+                    value={filters.type}
+                    onValueChange={(value)=> {
+                      setFilters((prev)=> ({...prev, type: value}))
+                    }}
+                  >
                     <SelectTrigger id="property-type">
                       <SelectValue placeholder="All Types" />
                     </SelectTrigger>
@@ -69,7 +103,12 @@ export default function PropertiesPage() {
                   <label htmlFor="price-range" className="text-sm font-medium">
                     Price Range
                   </label>
-                  <Select>
+                  <Select
+                  value={filters.priceRange}
+                    onValueChange={(value)=> {
+                      setFilters({...filters, priceRange: value})
+                    }}
+                  >
                     <SelectTrigger id="price-range">
                       <SelectValue placeholder="Any Price" />
                     </SelectTrigger>
@@ -86,7 +125,12 @@ export default function PropertiesPage() {
                   <label htmlFor="sharing" className="text-sm font-medium">
                     Sharing
                   </label>
-                  <Select>
+                  <Select
+                  value={filters.sharing}
+                    onValueChange={(value)=> {
+                      setFilters({...filters, sharing: value})
+                    }}
+                    >
                     <SelectTrigger id="sharing">
                       <SelectValue placeholder="Any" />
                     </SelectTrigger>
@@ -97,9 +141,7 @@ export default function PropertiesPage() {
                     </SelectContent>
                   </Select>
                 </div>
-                <Button variant="outline" className="w-full" onClick={()=> {
-                 
-                }}>
+                <Button variant="outline" className="w-full" onClick={handleApplyFilters}>
                   Apply Filters
                 </Button>
               </div>
@@ -121,7 +163,7 @@ export default function PropertiesPage() {
               </div>
 
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {properties.map((property) => (
+                  {filteredProperties.map((property) => (
                   <Card key={property.id} className="border-2">
                     <CardHeader className="pb-3">
                       <div className="flex justify-between items-start">
@@ -161,12 +203,12 @@ export default function PropertiesPage() {
                   </Card>
                 ))}
               </div>
-
               <div className="flex justify-center">
                 <Button variant="outline" className="gap-2">
                   Load More Properties
                 </Button>
               </div>
+
             </div>
           </div>
         </div>
