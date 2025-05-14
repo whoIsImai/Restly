@@ -65,11 +65,9 @@ export default function NewPropertyPage() {
                           <SelectValue placeholder="Select property type" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="house">House</SelectItem>
-                          <SelectItem value="apartment">Apartment</SelectItem>
-                          <SelectItem value="room">Room</SelectItem>
-                          <SelectItem value="studio">Studio</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem value="House">House</SelectItem>
+                          <SelectItem value="Apartment">Apartment</SelectItem>
+                          <SelectItem value="Room">Room</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -92,12 +90,12 @@ export default function NewPropertyPage() {
                       <Label>Is this property shared with other tenants?</Label>
                       <RadioGroup defaultValue="no" onValueChange={(value) => setIsShared(value === "yes")}>
                         <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="no" id="no-sharing" />
-                          <Label htmlFor="no-sharing">No, it's a private property</Label>
+                          <RadioGroupItem value="no" id="Private" />
+                          <Label htmlFor="Private">No, it's a private property</Label>
                         </div>
                         <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="yes" id="yes-sharing" />
-                          <Label htmlFor="yes-sharing">Yes, it's shared with other tenants</Label>
+                          <RadioGroupItem value="yes" id="Sharing" />
+                          <Label htmlFor="Sharing">Yes, it's shared with other tenants</Label>
                         </div>
                       </RadioGroup>
                     </div>

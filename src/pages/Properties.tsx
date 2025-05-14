@@ -26,7 +26,7 @@ export default function PropertiesPage() {
 
     const matchesType = filters.type === "all" ? true : filters.type ? item.type === filters.type : true;
 
-    const matchesLocation = filters.sharing ? item.location === filters.sharing : true;
+    const matchesSharing = filters.sharing === "any" ? true : filters.sharing ? item.sharing === filters.sharing : true;
 
     const matchesPrice = filters.priceRange
       ? (() => {
@@ -36,7 +36,7 @@ export default function PropertiesPage() {
         })()
       : true;
 
-    return matchesLocation && matchesType && matchesPrice;
+    return matchesSharing && matchesType && matchesPrice;
   });
 
   setFilteredProperties(filtered);
@@ -136,8 +136,8 @@ export default function PropertiesPage() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="any">Any</SelectItem>
-                      <SelectItem value="private">Private (No Sharing)</SelectItem>
-                      <SelectItem value="shared">Shared</SelectItem>
+                      <SelectItem value="Private">Private (No Sharing)</SelectItem>
+                      <SelectItem value="Shared">Shared</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
