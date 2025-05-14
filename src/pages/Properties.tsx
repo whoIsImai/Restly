@@ -28,13 +28,20 @@ export default function PropertiesPage() {
 
     const matchesSharing = filters.sharing === "any" ? true : filters.sharing ? item.sharing === filters.sharing : true;
 
-    const matchesPrice = filters.priceRange
-      ? (() => {
-          if (filters.priceRange === "1500+") return item.price >= 1500;
-          const [min, max] = filters.priceRange.split("-").map(Number);
-          return item.price >= min && item.price <= max;
-        })()
-      : true;
+    
+      const matchesPrice = filters.priceRange === "any" || !filters.priceRange
+      ? true
+      : (() => {
+          if (filters.priceRange.includes("+")) {
+            const min = parseInt(filters.priceRange.replace("+", ""), 10);
+            return item.price >= min;
+          } else {
+            const [min, max] = filters.priceRange
+              .split("-")
+              .map((p) => parseInt(p, 10));
+            return item.price >= min && item.price <= max;
+          }
+        })();
 
     return matchesSharing && matchesType && matchesPrice;
   });
@@ -114,10 +121,10 @@ export default function PropertiesPage() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="any">Any Price</SelectItem>
-                      <SelectItem value="R1,000 - R1,500">R1,000 - R1,500</SelectItem>
-                      <SelectItem value="R1,600 - R5,000">R1,600 - R5,000</SelectItem>
-                      <SelectItem value="R6,000 - R9,000">R6,000 - R9,000</SelectItem>
-                      <SelectItem value="R10,000+">R10,000+</SelectItem>
+                      <SelectItem value="1000-1500">R1,000 - R1,500</SelectItem>
+                      <SelectItem value="1600-5000">R1,600 - R5,000</SelectItem>
+                      <SelectItem value="6000-9000">R6,000 - R9,000</SelectItem>
+                      <SelectItem value="10000+">R10,000+</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
