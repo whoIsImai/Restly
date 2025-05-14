@@ -132,14 +132,14 @@ export default function PropertiesPage() {
               </div>
 
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {properties.map((property) => (
-                  <Card key={property.id}>
+                  {properties.map((property) => (
+                  <Card key={property.id} className="border-2">
                     <CardHeader className="pb-3">
                       <div className="flex justify-between items-start">
                         <CardTitle className="text-lg">{property.title}</CardTitle>
                         <Badge>R{property.price}/mo</Badge>
                       </div>
-                      <div className="flex items-center text-sm text-muted-foreground">
+                      <div className="flex items-center text-sm text-zinc-500">
                         <MapPin className="mr-1 h-3 w-3" />
                         {property.location}
                       </div>

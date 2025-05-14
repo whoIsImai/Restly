@@ -64,7 +64,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-3 md:gap-12">
-              <div className="flex flex-col items-center space-y-4 text-center p-10 bg-gray-200">
+              <div className="flex flex-col items-center space-y-4 text-center p-10 bg-gray-200 rounded-2xl">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <User className="h-8 w-8" />
                 </div>
@@ -73,7 +73,7 @@ export default function HomePage() {
                   Sign up as a landlord to start listing your properties on our platform.
                 </p>
               </div>
-              <div className="flex flex-col items-center space-y-4 text-center p-10 bg-gray-200">
+              <div className="flex flex-col items-center space-y-4 text-center p-10 bg-gray-200 rounded-2xl">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <Home className="h-8 w-8" />
                 </div>
@@ -82,7 +82,7 @@ export default function HomePage() {
                   After a payment provide detailed descriptions of your rental, including type, price, and amenities.
                 </p>
               </div>
-              <div className="flex flex-col items-center space-y-4 text-center p-10 bg-gray-200">
+              <div className="flex flex-col items-center space-y-4 text-center p-10 bg-gray-200 rounded-2xl">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <ArrowRight className="h-8 w-8" />
                 </div>
