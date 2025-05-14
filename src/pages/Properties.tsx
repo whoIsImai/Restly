@@ -9,21 +9,10 @@ import { Filter, MapPin, Plus, Search } from "lucide-react"
 import NavBar from "@/components/navBar"
 import Footer from "@/components/footer"
 import { properties } from "@/lib/properties"
-import { useState } from "react"
 
-type itemSearch = {
-  type: string
-  price: string
-  sharing: string
-}
+
 
 export default function PropertiesPage() {
-
-  const [search, setSearch] = useState<itemSearch>({
-    type : "",
-    price : "",
-    sharing: ""
-  })
 
   return (
     <div className="flex flex-col min-h-screen">
