@@ -114,10 +114,10 @@ export default function PropertiesPage() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="any">Any Price</SelectItem>
-                      <SelectItem value="0-500">R1,000 - R1,500</SelectItem>
-                      <SelectItem value="500-1000">R1,600 - R5,000</SelectItem>
-                      <SelectItem value="1000-1500">R6,000 - R9,000</SelectItem>
-                      <SelectItem value="1500+">R10,000+</SelectItem>
+                      <SelectItem value="R1,000 - R1,500">R1,000 - R1,500</SelectItem>
+                      <SelectItem value="R1,600 - R5,000">R1,600 - R5,000</SelectItem>
+                      <SelectItem value="R6,000 - R9,000">R6,000 - R9,000</SelectItem>
+                      <SelectItem value="R10,000+">R10,000+</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -149,7 +149,7 @@ export default function PropertiesPage() {
 
             <div className="space-y-6">
               <div className="flex items-center justify-between">
-                <div className="text-sm text-muted-foreground">Showing {properties.length} properties</div>
+                <div className="text-sm text-muted-foreground">Showing {filteredProperties.length} properties</div>
                 <Select defaultValue="newest">
                   <SelectTrigger className="w-[180px]">
                     <SelectValue placeholder="Sort by" />
@@ -161,7 +161,11 @@ export default function PropertiesPage() {
                   </SelectContent>
                 </Select>
               </div>
-
+               {filteredProperties.length === 0 ? (
+                  <div className="text-center mt-8 text-gray-500">
+                  No properties match your filters. Try adjusting your search.
+                </div>
+               )    : (
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {filteredProperties.map((property) => (
                   <Card key={property.id} className="border-2">
@@ -203,6 +207,7 @@ export default function PropertiesPage() {
                   </Card>
                 ))}
               </div>
+              )}
               <div className="flex justify-center">
                 <Button variant="outline" className="gap-2">
                   Load More Properties
