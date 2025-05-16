@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
-import { Filter, MapPin, Plus } from "lucide-react"
+import { Filter, MapPin, Plus, Search } from "lucide-react"
 import NavBar from "@/components/navBar"
 import Footer from "@/components/footer"
 import { properties } from "@/lib/properties"
@@ -75,6 +76,15 @@ export default function PropertiesPage() {
                   Filter Search
                 </div>
                 <Separator />
+                <div className="space-y-2">
+                  <label htmlFor="search" className="text-sm font-medium">
+                    Search
+                  </label>
+                  <div className="relative">
+                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                    <Input id="search" type="search" placeholder="Search properties..." className="pl-8" />
+                  </div>
+                </div>
                 <div className="space-y-2">
                   <label htmlFor="property-type" className="text-sm font-medium">
                     Property Type
