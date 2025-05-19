@@ -85,14 +85,6 @@ export default function PropertyDetailPage() {
                     <div className="text-sm font-medium">Utilities Included</div>
                     <div>{property.utilities.join(", ") || "None"}</div>
                   </div>
-                  <div className="space-y-2">
-                    <div className="text-sm font-medium">Available From</div>
-                    <div>{property.availableFrom}</div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-sm font-medium">Minimum Stay</div>
-                    <div>{property.minStay}</div>
-                  </div>
                 </div>
               </div>
 
