@@ -12,7 +12,7 @@ export default function NavBar() {
         {/* Brand */}
         <Link to="/" className="flex items-center gap-2 font-semibold">
           <Home className="w-5 h-5" />
-          <span>Rently</span>
+          <span>Restly</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -57,7 +57,7 @@ export default function NavBar() {
           <Link to="/contact" className="block text-sm font-medium hover:underline p-1">Contact</Link>
           <div className="pt-2 border-t mt-2 p-1">
             <Link to="/login" className="block mb-2">
-              <Button variant="outline" size="sm" className="w-50">Log In</Button>
+              <Button variant="outline" size="sm" className="w-50">Login</Button>
             </Link>
             <Link to="/register" className="block mb-2">
               <Button size="sm" className="w-50">Sign Up</Button>
