@@ -44,7 +44,7 @@ export default function HomePage() {
                       <Home className="w-16 h-16 mx-auto text-slate-400" />
                       <h3 className="text-xl font-medium">Simple Property Listings</h3>
                       <p className="text-sm text-muted-foreground">
-                        No need for photos. Just describe your property and connect with tenants.
+                        Describe your property and connect with tenants.
                       </p>
                     </div>
                   </div>
