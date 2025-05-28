@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="flex-1 space-y-4">
             <div className="flex items-center gap-2 font-semibold">
               <Home className="w-5 h-5" />
-              <span>Rently</span>
+              <span>Restly</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Connecting landlords and tenants.
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="container flex flex-col items-center justify-between gap-4 border-t py-6 md:h-16 md:flex-row md:py-0">
-          <p className="text-xs text-muted-foreground">© 2025 Rently. All rights reserved.</p>
+          <p className="text-xs text-muted-foreground">© 2025 Restly. All rights reserved.</p>
           <div className="flex gap-4 text-sm text-muted-foreground">
             <Link to="/terms" className="hover:underline">
               Terms of Service
