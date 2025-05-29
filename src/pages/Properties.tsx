@@ -33,7 +33,7 @@ export default function PropertiesPage() {
           </div>
 
           <div className="grid gap-6">
-            <div className="space-y-6">
+            <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="text-sm text-muted-foreground">Showing {filteredProperties.length} properties</div>
                 <Select defaultValue="newest"
@@ -63,8 +63,8 @@ export default function PropertiesPage() {
                 </Select>
               </div>
                {filteredProperties.length === 0 ? (
-                  <div className="text-center mt-8 text-gray-500">
-                  No properties match your filters. Try adjusting your search.
+                  <div className="text-center mt-8 text-gray-500 text-5xl">
+                  No properties available.
                 </div>
                )    
                : 
