@@ -32,8 +32,8 @@ export default function PropertiesPage() {
             </Link>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-[280px_1fr]">
-            <div className="space-y-6">
+          <div className="grid gap-4">
+            <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="text-sm text-muted-foreground">Showing {filteredProperties.length} properties</div>
                 <Select defaultValue="newest"
