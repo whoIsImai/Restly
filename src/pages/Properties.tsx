@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
-import { Filter, MapPin, Plus, Search } from "lucide-react"
+import { MapPin, Plus } from "lucide-react"
 import NavBar from "@/components/navBar"
 import Footer from "@/components/footer"
 import { properties } from "@/lib/properties"
@@ -14,41 +13,6 @@ import { useState } from "react"
 
 export default function PropertiesPage() {
   const [filteredProperties, setFilteredProperties] = useState(properties)
-  const [filters, setFilters] = useState({
-    type: '',
-    priceRange: '',
-    sharing: ''
-})
-
-  const handleApplyFilters = () => {
-    
-  const filtered = properties.filter((item) => {
-
-    const matchesType = filters.type === "all" ? true : filters.type ? item.type === filters.type : true;
-
-    const matchesSharing = filters.sharing === "any" ? true : filters.sharing ? item.sharing === filters.sharing : true;
-
-    
-      const matchesPrice = filters.priceRange === "any" || !filters.priceRange
-      ? true
-      : (() => {
-          if (filters.priceRange.includes("+")) {
-            const min = parseInt(filters.priceRange.replace("+", ""), 10);
-            return item.price >= min;
-          } else {
-            const [min, max] = filters.priceRange
-              .split("-")
-              .map((p) => parseInt(p, 10));
-            return item.price >= min && item.price <= max;
-          }
-        })();
-
-    return matchesSharing && matchesType && matchesPrice;
-  });
-
-  setFilteredProperties(filtered);
-};
-
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -69,91 +33,6 @@ export default function PropertiesPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-[280px_1fr]">
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <div className="font-medium flex items-center gap-2">
-                  <Filter className="h-4 w-4" />
-                  Filter Search
-                </div>
-                <Separator />
-                <div className="space-y-2">
-                  <label htmlFor="search" className="text-sm font-medium">
-                    Search
-                  </label>
-                  <div className="relative">
-                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                    <Input id="search" type="search" placeholder="Search properties..." className="pl-8" />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="property-type" className="text-sm font-medium">
-                    Property Type
-                  </label>
-                  <Select
-                    value={filters.type}
-                    onValueChange={(value)=> {
-                      setFilters((prev)=> ({...prev, type: value}))
-                    }}
-                  >
-                    <SelectTrigger id="property-type">
-                      <SelectValue placeholder="All Types" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Types</SelectItem>
-                      <SelectItem value="House">House</SelectItem>
-                      <SelectItem value="Room">Room</SelectItem>
-                      <SelectItem value="Apartment">Apartment</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="price-range" className="text-sm font-medium">
-                    Price Range
-                  </label>
-                  <Select
-                  value={filters.priceRange}
-                    onValueChange={(value)=> {
-                      setFilters({...filters, priceRange: value})
-                    }}
-                  >
-                    <SelectTrigger id="price-range">
-                      <SelectValue placeholder="Any Price" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="any">Any Price</SelectItem>
-                      <SelectItem value="1000-1500">R1,000 - R1,500</SelectItem>
-                      <SelectItem value="1600-5000">R1,600 - R5,000</SelectItem>
-                      <SelectItem value="6000-9000">R6,000 - R9,000</SelectItem>
-                      <SelectItem value="10000+">R10,000+</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="sharing" className="text-sm font-medium">
-                    Sharing
-                  </label>
-                  <Select
-                  value={filters.sharing}
-                    onValueChange={(value)=> {
-                      setFilters({...filters, sharing: value})
-                    }}
-                    >
-                    <SelectTrigger id="sharing">
-                      <SelectValue placeholder="Any" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="any">Any</SelectItem>
-                      <SelectItem value="Private">Private (No Sharing)</SelectItem>
-                      <SelectItem value="Shared">Shared</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <Button variant="outline" className="w-full" onClick={handleApplyFilters}>
-                  Apply Filters
-                </Button>
-              </div>
-            </div>
-
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <div className="text-sm text-muted-foreground">Showing {filteredProperties.length} properties</div>
