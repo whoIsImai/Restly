@@ -50,7 +50,7 @@ export default function Login() {
     <div className="flex flex-col min-h-[50vh] h-full w-full items-center justify-center px-4">
       <Card className="mx-auto max-w-sm m-5">
         <CardHeader>
-          <CardTitle className="text-2xl">Login</CardTitle>
+          <CardTitle className="text-2xl font-bold text-amber-400">Login</CardTitle>
           <CardDescription>
             Enter your email and password to login to your account.
           </CardDescription>
@@ -67,7 +67,7 @@ export default function Login() {
                       <FormLabel htmlFor="email">Email</FormLabel>
                       <FormControl>
                         <Input
-                        className="w-70"
+                        className="w-70 bg-gray-200"
                           id="email"
                           placeholder="johndoe@mail.com"
                           type="email"
@@ -95,6 +95,7 @@ export default function Login() {
                       </div>
                       <FormControl>
                         <PasswordInput
+                        className='bg-gray-200'
                           id="password"
                           placeholder="******"
                           autoComplete="current-password"
@@ -105,7 +106,7 @@ export default function Login() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full bg-amber-400 rounded-3xl">
                   Login
                 </Button>
               </div>
