@@ -59,30 +59,30 @@ export default function HomePage() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-3 md:gap-12">
-              <div className="flex flex-col items-center space-y-4 text-center p-10 bg-gray-200 rounded-2xl">
+              <div className="flex flex-col items-center space-y-4 text-center p-10 bg-amber-200 rounded-2xl">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <User className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-bold">Create an Account</h3>
-                <p className="text-muted-foreground">
+                <p>
                   Sign up as a landlord to start listing your properties on our platform.
                 </p>
               </div>
-              <div className="flex flex-col items-center space-y-4 text-center p-10 bg-gray-200 rounded-2xl">
+              <div className="flex flex-col items-center space-y-4 text-center p-10 bg-amber-200 rounded-2xl">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <Home className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-bold">List Your Property</h3>
-                <p className="text-muted-foreground">
+                <p>
                   After a payment provide detailed descriptions of your rental, including type, price, and amenities.
                 </p>
               </div>
-              <div className="flex flex-col items-center space-y-4 text-center p-10 bg-gray-200 rounded-2xl">
+              <div className="flex flex-col items-center space-y-4 text-center p-10 bg-amber-200 rounded-2xl">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <ArrowRight className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-bold">Connect with Tenants</h3>
-                <p className="text-muted-foreground">
+                <p>
                   Receive inquiries directly from interested tenants looking for properties like yours.
                 </p>
               </div>
