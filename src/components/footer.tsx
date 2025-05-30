@@ -29,18 +29,38 @@ export default function Footer() {
                     List a Property
                   </Link>
                 </li>
-              </ul>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-sm font-medium">Company</h3>
-              <ul className="space-y-2 text-sm">
                 <li>
                   <Link to="/about" className="text-muted-foreground hover:underline">
-                    About
+                    About Us
                   </Link>
                 </li>
               </ul>
             </div>
+            <div className="space-y-2">
+              <h3 className="text-sm font-medium">Contact Us</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link to="#" className="text-muted-foreground hover:underline">
+                    Facebook
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="text-muted-foreground hover:underline">
+                    Instagram
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="text-muted-foreground hover:underline">
+                    Twitter
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="text-muted-foreground hover:underline">
+                    LinkedIn
+                  </Link>
+                </li>
+              </ul>
+              </div>
           </div>
         </div>
         <div className="container flex flex-col items-center justify-between gap-4 border-t py-6 md:h-16 md:flex-row md:py-0">
