@@ -75,7 +75,7 @@ export default function PropertiesPage() {
                     <CardHeader className="pb-3">
                       <div className="flex justify-between items-start">
                         <CardTitle className="text-lg underline">{property.title}</CardTitle>
-                        <Badge className="bg-amber-400 text-black">R{property.price}/mo</Badge>
+                        <Badge>R{property.price}/mo</Badge>
                       </div>
                       <div className="flex items-center text-sm text-zinc-500 font-bold">
                         <MapPin className="mr-1 h-3 w-3" />
