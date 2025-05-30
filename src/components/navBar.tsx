@@ -18,7 +18,7 @@ export default function NavBar() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6">
           <Link to="/properties" className="text-sm font-medium hover:underline underline-offset-4">
-            Browse Properties
+             Properties
           </Link>
           <Link to="/about" className="text-sm font-medium hover:underline underline-offset-4">
             About
