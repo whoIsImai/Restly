@@ -57,7 +57,7 @@ export default function Register() {
     <div className="flex min-h-[60vh] h-full w-full items-center justify-center px-4">
       <Card className="mx-auto max-w-sm m-3 p-5">
         <CardHeader>
-          <CardTitle className="text-2xl">Register</CardTitle>
+          <CardTitle className="text-2xl font-bold text-amber-400">Create Account</CardTitle>
           <CardDescription>
             Create a new account by filling out the form below.
           </CardDescription>
@@ -74,7 +74,11 @@ export default function Register() {
                     <FormItem className="grid gap-2">
                       <FormLabel htmlFor="name">Full Name</FormLabel>
                       <FormControl>
-                        <Input id="name" placeholder="John Doe" {...field} />
+                        <Input
+                        className='bg-gray-200' 
+                        id="name" 
+                        placeholder="John Doe"
+                         {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -90,7 +94,7 @@ export default function Register() {
                       <FormLabel htmlFor="email">Email</FormLabel>
                       <FormControl>
                         <Input
-                        className="w-70"
+                        className="w-70 bg-gray-200"
                           id="email"
                           placeholder="johndoe@mail.com"
                           type="email"
@@ -112,6 +116,7 @@ export default function Register() {
                       <FormLabel htmlFor="phone">Phone Number</FormLabel>
                       <FormControl>
                         <Input
+                        className='bg-gray-200'
                           id="phone"
                           placeholder="0781234567"
                           type="tel"
@@ -133,6 +138,7 @@ export default function Register() {
                       <FormLabel htmlFor="password">Password</FormLabel>
                       <FormControl>
                         <PasswordInput
+                        className='bg-gray-200'
                           id="password"
                           placeholder="******"
                           autoComplete="new-password"
@@ -144,7 +150,7 @@ export default function Register() {
                   )}
                 />
 
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full bg-amber-400 rounded-3xl">
                   Register
                 </Button>
               </div>
