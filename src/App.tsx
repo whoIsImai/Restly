@@ -7,6 +7,7 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import ForgetPassword from "./pages/ForgotPassword"
 import About from "./pages/About"
+import TsAndCs from "./pages/Ts&Cs"
 import './App.css'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgetPassword />} />
+        <Route path="/terms" element={<TsAndCs />} />
         
       </Routes>
     </BrowserRouter>
