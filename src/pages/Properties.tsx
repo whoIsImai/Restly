@@ -17,7 +17,7 @@ export default function PropertiesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar />
-      <main className="flex-1">
+      <main className="flex-1 mt-[-50px]">
         <div className="container px-4 py-6 md:px-6 md:py-8 top-[-50px]">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div>
