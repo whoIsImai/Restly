@@ -7,7 +7,7 @@ export default function About(){
 return(
     <>
         <NavBar />
-        <div className="flex flex-1 justify-center py-5">
+        <div className="flex flex-1 justify-center py-5 mt-[-48px]">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div className="flex flex-wrap justify-center gap-3 p-4">
                 <p className="text-[#141414] tracking-light text-[32px] font-bold leading-tight min-w-72">
