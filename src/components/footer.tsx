@@ -39,11 +39,6 @@ export default function Footer() {
                     About
                   </Link>
                 </li>
-                <li>
-                  <Link to="/contact" className="text-muted-foreground hover:underline">
-                    Contact
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
