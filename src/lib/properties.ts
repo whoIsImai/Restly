@@ -42,7 +42,7 @@ export const properties: Property[] = [
   },
   {
     id: "2",
-    title: "A Single Room",
+    title: "1-Bedroom Apartment",
     price: 5000,
     location: "Rustenburg noord Snel Street",
     type: "Apartment",
