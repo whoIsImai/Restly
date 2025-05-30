@@ -193,7 +193,7 @@ export default function NewPropertyPage() {
                   </Button>
                   <Button type="submit" className="gap-2">
                     <Save className="h-4 w-4" />
-                    List Property
+                    Add Property
                   </Button>
                 </CardFooter>
               </form>
