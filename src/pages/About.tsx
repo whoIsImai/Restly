@@ -1,16 +1,19 @@
 import NavBar from "@/components/navBar"
 import Footer from "@/components/footer"
+import { Link } from "react-router-dom"
 
 export default function About(){
 
 return(
     <>
         <NavBar />
- <div className="relative flex size-full min-h-screen flex-col bg-neutral-50 group/design-root overflow-x-hidden">
-      <div className="layout-container flex h-full grow flex-col">
-        <div className="px-40 flex flex-1 justify-center py-5">
+        <div className="flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div className="flex flex-wrap justify-between gap-3 p-4"><p className="text-[#141414] tracking-light text-[32px] font-bold leading-tight min-w-72">About Restly</p></div>
+            <div className="flex flex-wrap justify-center gap-3 p-4">
+                <p className="text-[#141414] tracking-light text-[32px] font-bold leading-tight min-w-72">
+                    About Restly
+                </p>
+            </div>
             <p className="text-[#141414] text-base font-normal leading-normal pb-3 pt-1 px-4">
               Restly is a online platform connecting renters with property owners. Our mission is to simplify the rental process, making it more transparent and efficient
               for everyone. We believe in fostering a community where renters can find their ideal homes and owners can manage their properties with ease. We are committed to
@@ -31,17 +34,17 @@ return(
               team available 24/7 to assist with any inquiries or issues. Property owners are charged a small fee to list their properties on Restly, reflecting the high demand
               and popularity of our platform among renters.
             </p>
-            <div className="flex px-4 py-3 justify-start">
+            <div className="flex px-4 py-3 justify-center">
               <button
-                className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-black text-neutral-50 text-sm font-bold leading-normal tracking-[0.015em]"
+                className="flex items-center justify-center overflow-hidden rounded-2xl h-10 px-4 bg-amber-300 text-black-50 text-sm font-bold"
               >
+                <Link to="/properties" className="flex items-center gap-2">
                 <span className="truncate">Explore Rental Options</span>
+                </Link>
               </button>
             </div>
           </div>
         </div>
-      </div>
-    </div>
         <Footer/>
     </>
 )
