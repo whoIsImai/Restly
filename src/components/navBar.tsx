@@ -7,8 +7,8 @@ export default function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return(
-        <header className="border-b">
-      <div className="container flex items-center justify-between h-16 px-4 md:px-6 relative top-[-35px]">
+      <>
+      <div className="container flex items-center justify-between h-16 px-4 md:px-6 relative top-[-35px] border-b">
         {/* Brand */}
         <Link to="/" className="flex items-center gap-2 font-semibold">
           <Home className="w-5 h-5" />
@@ -61,6 +61,6 @@ export default function NavBar() {
           </div>
         </div>
       )}
-    </header>
+      </>
     )
 }
