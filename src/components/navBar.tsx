@@ -23,9 +23,6 @@ export default function NavBar() {
           <Link to="/about" className="text-sm font-medium hover:underline underline-offset-4">
             About
           </Link>
-          <Link to="/contact" className="text-sm font-medium hover:underline underline-offset-4">
-            Contact
-          </Link>
         </nav>
 
         {/* Buttons + Hamburger */}
@@ -54,7 +51,6 @@ export default function NavBar() {
         <div className="md:hidden px-4 pb-4 space-y-2 mb-5">
           <Link to="/properties" className="block text-sm font-medium hover:underline p-1">Browse Properties</Link>
           <Link to="/about" className="block text-sm font-medium hover:underline p-1">About</Link>
-          <Link to="/contact" className="block text-sm font-medium hover:underline p-1">Contact</Link>
           <div className="pt-2 border-t mt-2 p-1">
             <Link to="/login" className="block mb-2">
               <Button variant="outline" size="sm" className="w-50">Login</Button>
