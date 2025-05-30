@@ -3,6 +3,7 @@ import { ArrowRight, Home, Search, User } from "lucide-react"
 import {Link} from 'react-router-dom'
 import NavBar from "@/components/navBar"
 import Footer from "@/components/footer"
+import house from "@/assets/house.png"
 
 export default function HomePage() {
   return (
@@ -24,7 +25,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex flex-col gap-1 min-[800px]:flex-row ml-10">
                   <Link to="/properties">
-                    <Button size="lg" variant="outline" className="gap-2 bg-amber-400 text-gray-900 ">
+                    <Button size="lg" variant="outline" className="gap-2 bg-amber-200 text-amber-900 font-bold">
                       <Search className="h-4 w-4" />
                       Find a Rental
                     </Button>
@@ -35,7 +36,7 @@ export default function HomePage() {
                 <div className="relative w-full max-w-[500px] aspect-square rounded-xl bg-gradient-to-br from-slate-200 to-slate-100 flex items-center justify-center p-8">
                   <div className="absolute inset-4 border-2 border-dashed border-slate-300 rounded-lg flex items-center justify-center">
                     <div className="text-center space-y-2 p-6">
-                      <Home className="w-16 h-16 mx-auto text-slate-400" />
+                      <img src={house} alt="House" className="w-full h-auto mb-4 rounded-lg" />
                       <h3 className="text-xl font-medium">Simple Property Listings</h3>
                       <p className="text-sm text-muted-foreground">
                         Describe your property and connect with tenants.
