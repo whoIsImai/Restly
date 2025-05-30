@@ -22,15 +22,9 @@ export default function HomePage() {
                     and start receiving inquiries.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Link to="/properties/new">
-                    <Button size="lg" className="gap-2">
-                      List Your Property
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </Link>
+                <div className="flex flex-col gap-1 min-[800px]:flex-row ml-10">
                   <Link to="/properties">
-                    <Button size="lg" variant="outline" className="gap-2">
+                    <Button size="lg" variant="outline" className="gap-2 bg-amber-400 text-gray-900 ">
                       <Search className="h-4 w-4" />
                       Find a Rental
                     </Button>
