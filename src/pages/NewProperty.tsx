@@ -162,32 +162,8 @@ export default function NewPropertyPage() {
                       />
                     </div>
                   </div>
-
-                  <div className="space-y-4">
-                    <h3 className="text-lg font-medium">Contact Information</h3>
-
-                    <div className="grid gap-2">
-                      <Label htmlFor="name">Contact Name</Label>
-                      <Input id="name" placeholder="Your name" required />
-                    </div>
-
-                    <div className="grid gap-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" placeholder="Your email address" required />
-                    </div>
-
-                    <div className="grid gap-2">
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" placeholder="Your phone number" required />
-                    </div>
-
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="preferred-contact" />
-                      <Label htmlFor="preferred-contact">I prefer to be contacted by email</Label>
-                    </div>
-                  </div>
                 </CardContent>
-                <CardFooter className="flex justify-between">
+                <CardFooter className="flex justify-between mt-3">
                   <Button type="button" variant="outline">
                     Cancel
                   </Button>
