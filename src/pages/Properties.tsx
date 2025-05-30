@@ -25,7 +25,7 @@ export default function PropertiesPage() {
               <p className="text-muted-foreground">Find your perfect rental from our listings</p>
             </div>
             <Link to="/properties/new">
-              <Button className="gap-2">
+              <Button className="gap-2 bg-amber-400 text-black">
                 <Plus className="h-4 w-4" />
                 Add Your Property
               </Button>
@@ -74,10 +74,10 @@ export default function PropertiesPage() {
                   <Card key={property.id} className="border-2">
                     <CardHeader className="pb-3">
                       <div className="flex justify-between items-start">
-                        <CardTitle className="text-lg">{property.title}</CardTitle>
-                        <Badge>R{property.price}/mo</Badge>
+                        <CardTitle className="text-lg underline">{property.title}</CardTitle>
+                        <Badge className="bg-amber-400 text-black">R{property.price}/mo</Badge>
                       </div>
-                      <div className="flex items-center text-sm text-zinc-500">
+                      <div className="flex items-center text-sm text-zinc-500 font-bold">
                         <MapPin className="mr-1 h-3 w-3" />
                         {property.location}
                       </div>
