@@ -29,7 +29,7 @@ export default function NewPropertyPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar />
-      <main className="flex-1">
+      <main className="flex-1 mt-[-48px]">
         <div className="container px-4 py-6 md:px-6 md:py-8">
           <div className="flex items-center gap-2 mb-6">
             <Link to="/properties">
@@ -191,7 +191,7 @@ export default function NewPropertyPage() {
                   <Button type="button" variant="outline">
                     Cancel
                   </Button>
-                  <Button type="submit" className="gap-2">
+                  <Button type="submit" className="gap-2 bg-amber-300 text-black-50">
                     <Save className="h-4 w-4" />
                     Add Property
                   </Button>
